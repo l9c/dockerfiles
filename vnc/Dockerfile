@@ -1,7 +1,10 @@
 # Start with Ubuntu base image
-FROM ubuntu:14.04
-MAINTAINER Kai Arulkumaran <design@kaixhin.com>
+# use mirrored ubuntu image
+FROM index.alauda.cn/library/ubuntu:14.04
+MAINTAINER l9c
 
+
+COPY sources.list /etc/apt/
 # Install LXDE, VNC server and Firefox
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   firefox \
